@@ -8,6 +8,7 @@ export const MovieCast = () => {
   const [movieCast, setMovieCast] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -34,14 +35,11 @@ export const MovieCast = () => {
     return () => controller.abort();
   }, [movieId]);
 
-  console.log(movieCast.length);
-  console.log('loading', loading);
-
   return (
     <div>
       {loading && <b>Loading...Please wait!</b>}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
-      {movieCast.length > 0 ? (
+      {movieCast.length > 0 && !loading ? (
         <ul className={css.castList}>
           {movieCast.map(({ character, name, id, profile_path }) => {
             const href = getImg(profile_path);
@@ -56,7 +54,7 @@ export const MovieCast = () => {
                 </div>
                 <div>
                   <p className={css.subtitle}>
-                    Name:<span className={css.text}> {name}</span>{' '}
+                    Name:<span className={css.text}> {name}</span>
                   </p>
                   {character && (
                     <p className={css.subtitle}>
