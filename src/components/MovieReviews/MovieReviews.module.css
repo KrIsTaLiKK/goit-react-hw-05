@@ -5,6 +5,12 @@
   box-shadow: #ffffff4d 0px 2px 4px 0px, #ffffff4d 0px 2px 16px 0px;
 }
 
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .author {
   font-weight: 400;
   font-size: 18px;

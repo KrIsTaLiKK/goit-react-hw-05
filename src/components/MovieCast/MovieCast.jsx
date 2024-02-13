@@ -23,6 +23,7 @@ export const MovieCast = () => {
         });
 
         setMovieCast(data);
+        setIsEmpty(data.length === 0);
       } catch (error) {
         error.code !== 'ERR_CANCELED' && setError(true);
       } finally {
@@ -35,11 +36,13 @@ export const MovieCast = () => {
     return () => controller.abort();
   }, [movieId]);
 
+  console.log(isEmpty);
+
   return (
     <div>
       {loading && <b>Loading...Please wait!</b>}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
-      {movieCast.length > 0 && !loading && (
+      {!isEmpty ? (
         <ul className={css.castList}>
           {movieCast.map(({ character, name, id, profile_path }) => {
             const href = getImg(profile_path);
@@ -66,8 +69,9 @@ export const MovieCast = () => {
             );
           })}
         </ul>
+      ) : (
+        <b>Sorry, we don`t have cast</b>
       )}
-      {!movieCast.length && !loading && <b>Sorry, we don`t have cast</b>}
     </div>
   );
 };

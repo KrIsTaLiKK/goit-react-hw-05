@@ -7,6 +7,7 @@ export const MovieReviews = () => {
   const [movieReviews, setMovieReviews] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -21,6 +22,7 @@ export const MovieReviews = () => {
         });
 
         setMovieReviews(data);
+        setIsEmpty(!data.length);
       } catch (error) {
         error.code !== 'ERR_CANCELED' && setError(true);
       } finally {
@@ -37,8 +39,8 @@ export const MovieReviews = () => {
     <div className={css.reviewsWrap}>
       {loading && <b>Loading...Please wait!</b>}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
-      {movieReviews.length > 0 ? (
-        <ul style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+      {!isEmpty ? (
+        <ul className={css.reviewsList}>
           {movieReviews.map(({ author, content, id }) => {
             return (
               <li key={id}>
