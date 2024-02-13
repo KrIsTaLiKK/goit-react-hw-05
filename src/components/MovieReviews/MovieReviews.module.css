@@ -1,0 +1,17 @@
+.reviewsWrap {
+  padding: 20px;
+  border-radius: 20px;
+  color: wheat;
+  box-shadow: #ffffff4d 0px 2px 4px 0px, #ffffff4d 0px 2px 16px 0px;
+}
+
+.author {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: red;
+}
+
+.authorName {
+  color: aliceblue;
+}

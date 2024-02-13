@@ -1,0 +1,43 @@
+.castItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 5px;
+  width: calc((100% - 30px) / 4);
+  min-height: 221px;
+  background-color: white;
+
+  border-radius: 12px;
+  text-align: center;
+}
+
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.3em;
+  color: black;
+}
+
+.text {
+  font-weight: 400;
+}
+
+.profileWrap {
+  width: 140px;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+}
