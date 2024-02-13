@@ -39,7 +39,7 @@ export const MovieCast = () => {
     <div>
       {loading && <b>Loading...Please wait!</b>}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
-      {movieCast.length > 0 && !loading ? (
+      {movieCast.length > 0 && !loading && (
         <ul className={css.castList}>
           {movieCast.map(({ character, name, id, profile_path }) => {
             const href = getImg(profile_path);
@@ -66,9 +66,8 @@ export const MovieCast = () => {
             );
           })}
         </ul>
-      ) : (
-        <b>Sorry, we don`t have cast</b>
       )}
+      {!movieCast.length && !loading && <b>Sorry, we don`t have cast</b>}
     </div>
   );
 };
