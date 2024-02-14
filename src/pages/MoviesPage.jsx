@@ -3,6 +3,7 @@ import { SearchBar } from '../components/SearchBar/SearchBar';
 import { fetchMoviesBySearchQuery } from '../films-api';
 import { MovieList } from '../components/MovieList/MovieList';
 import { useSearchParams } from 'react-router-dom';
+import { Loader } from '../components/Loader/Loader';
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
@@ -48,8 +49,10 @@ export default function MoviesPage() {
 
   return (
     <div>
-      <SearchBar onSubmit={handleSubmit} />
-      {loading && <b>Loading...Please wait!</b>}
+      <div>
+        <SearchBar onSubmit={handleSubmit} />
+      </div>
+      {loading && <Loader />}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FcSearch } from 'react-icons/fc';
+import css from './SearchBar.module.css';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -20,8 +22,11 @@ export const SearchBar = ({ onSubmit }) => {
         name="searchQuery"
         value={query}
         onChange={e => setQuery(e.target.value)}
+        placeholder="Search movies..."
       />
-      <button type="submit">Search</button>
+      <button type="submit" className={css.submit}>
+        <FcSearch size={50} />
+      </button>
     </form>
   );
 };

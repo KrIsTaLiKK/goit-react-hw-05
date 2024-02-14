@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchMoviesById } from '../films-api';
 import { useParams } from 'react-router-dom';
 import { MovieDetails } from '../components/MovieDetails/MovieDetails';
+import { Loader } from '../components/Loader/Loader';
 
 export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
@@ -35,7 +36,7 @@ export default function MovieDetailsPage() {
 
   return (
     <div>
-      {loading && <b>Loading...Please wait!</b>}
+      {loading && <Loader />}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
       {movie && <MovieDetails item={movie} />}
     </div>

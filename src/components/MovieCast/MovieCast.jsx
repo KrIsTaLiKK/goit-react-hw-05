@@ -3,6 +3,7 @@ import { fetchMovieCast } from '../../films-api';
 import { useParams } from 'react-router-dom';
 import { getImg } from '../../helpers/get-img';
 import css from './MovieCast.module.css';
+import { Loader } from '../Loader/Loader';
 
 export const MovieCast = () => {
   const [movieCast, setMovieCast] = useState([]);
@@ -40,7 +41,7 @@ export const MovieCast = () => {
 
   return (
     <div>
-      {loading && <b>Loading...Please wait!</b>}
+      {loading && <Loader />}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
       {!isEmpty ? (
         <ul className={css.castList}>

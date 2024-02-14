@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchMovieReviews } from '../../films-api';
 import { useParams } from 'react-router-dom';
 import css from './MovieReviews.module.css';
+import { Loader } from '../Loader/Loader';
 
 export const MovieReviews = () => {
   const [movieReviews, setMovieReviews] = useState([]);
@@ -37,7 +38,7 @@ export const MovieReviews = () => {
 
   return (
     <div className={css.reviewsWrap}>
-      {loading && <b>Loading...Please wait!</b>}
+      {loading && <Loader />}
       {error && <b>Oops! Something went wrong. Please, reloading the page!</b>}
       {!isEmpty ? (
         <ul className={css.reviewsList}>

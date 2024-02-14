@@ -32,17 +32,18 @@
   align-items: center;
   justify-content: center;
   min-width: 50px;
+  padding: 10px;
   border-radius: 10px;
   background-color: black;
   color: white;
 
-  padding: 10px;
+  transform: scale(1);
+
+  transition: transform 250ms var(--cubicBezier);
 }
 
 .link:is(:hover, :focus) {
-  transform: scale(1.03);
-  /* box-shadow: rgba(16, 28, 205, 0.4) 0 2px 5px, #9333334d 0 7px 13px -3px,
-    rgba(16, 28, 205, 0.4) 0 -5px inset; */
+  transform: scale(1.05);
 }
 
 .blink {
