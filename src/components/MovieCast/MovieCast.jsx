@@ -37,8 +37,6 @@ export const MovieCast = () => {
     return () => controller.abort();
   }, [movieId]);
 
-  console.log(isEmpty);
-
   return (
     <div>
       {loading && <Loader />}
