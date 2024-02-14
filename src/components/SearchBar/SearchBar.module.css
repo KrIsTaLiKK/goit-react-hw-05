@@ -1,0 +1,32 @@
+form {
+  position: relative;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 50px;
+}
+
+input {
+  width: 350px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 0 20px;
+  background-color: transparent;
+  color: rgb(245, 236, 236);
+  border: none;
+  border-bottom: 1px solid rgba(249, 246, 246, 0.8);
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: 200;
+  color: rgba(249, 246, 246, 0.8);
+}
+
+.submit {
+  background-color: transparent;
+  border: none;
+}

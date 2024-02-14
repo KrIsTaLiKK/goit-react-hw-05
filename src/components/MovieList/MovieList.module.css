@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  transition: color 250ms var(--cubicBezier);
+}
+
+.link:is(:hover, :focus) {
+  color: blue;
+}

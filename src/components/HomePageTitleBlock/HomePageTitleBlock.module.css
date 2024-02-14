@@ -1,0 +1,10 @@
+.wrap {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.mainIcon {
+  color: blue;
+}
