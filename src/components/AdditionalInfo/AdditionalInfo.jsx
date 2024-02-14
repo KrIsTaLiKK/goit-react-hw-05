@@ -16,7 +16,7 @@ export const AdditionalInfo = () => {
         </NavLink>
       </div>
 
-      <Suspense fallback={<b>Loading subpage...</b>}>
+      <Suspense fallback={<b>Loading, please wait!...</b>}>
         <Outlet />
       </Suspense>
     </div>
